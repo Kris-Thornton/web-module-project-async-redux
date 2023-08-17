@@ -1,31 +1,48 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 import data from "../imageData/catImages";
-import {useKeyGen} from 'react-key-from-object';
+
 
 
 const ImageList = (props) => {
-    const keyGen = useKeyGen
-    const catImages = data
-
+    console.log(props)
+    const {catImages} = props;
+   
+    
+    
     return(
         <>
-        <div>List test</div>
+        <div><h1>Cats!</h1></div>
+        <ul>
         {
-            catImages.map(() => {
+            catImages.map((param, index) => {
+
+                
                 return (
-                    <ul>
-                        <img key={keyGen}src={catImages[4].url} />
-                    </ul>
+                       
+                        <li key={`Cat ${index + 1}`}>
+                         <p>{`Cat ${index + 1}`}</p>    
+                        <img  src={param.url} width={300} />
+                        </li>
+                        
+                    
                     
                     
                 )
             },)
         }
-       
+       </ul>
         </>
         
     )
     
 }
 
-export default ImageList
+
+const mapStateToProps = state => {
+    return {
+        catImages: state.catImages
+    }
+}
+
+export default connect(mapStateToProps)(ImageList)

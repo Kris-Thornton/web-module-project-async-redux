@@ -12,7 +12,7 @@ const ImageForm = () => {
         <form>
       <input />
       <button>Search</button>
-      <ImageList />
+      
 
     </form>
     )
