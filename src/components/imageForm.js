@@ -5,13 +5,15 @@ import ImageList from './imageList'
 
 const ImageForm = () => {
 
-    
+    const switchHandler = () => {
+      <ImageList />
+    }
 
 
     return (
         <form>
-      <input />
-      <button>Search</button>
+      
+      <button onClick={switchHandler}>Switch Cat</button>
       
 
     </form>

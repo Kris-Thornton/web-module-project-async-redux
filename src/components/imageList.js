@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import data from "../imageData/catImages";
+import '../App.css';
 
 
 
@@ -12,18 +12,18 @@ const ImageList = (props) => {
     
     return(
         <>
-        <div><h1>Cats!</h1></div>
-        <ul>
+        <div><h6>Press button to change the cat images.</h6></div>
+        <ul className = "catSnap">
         {
             catImages.map((param, index) => {
 
                 
                 return (
                        
-                        <li key={`Cat ${index + 1}`}>
+                        <ul key={`Cat ${index + 1}`}>
                          <p>{`Cat ${index + 1}`}</p>    
                         <img  src={param.url} width={300} />
-                        </li>
+                        </ul>
                         
                     
                     
